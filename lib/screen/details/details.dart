@@ -13,34 +13,36 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          DetailAppBar(house),
-          SizedBox(height: 20),
-          ContentIntro(house: house),
-          SizedBox(height: 10),
-          HouseInfo(),
-          SizedBox(height: 20),
-          About(),
-          SizedBox(height: 20),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child:ElevatedButton(
-                onPressed: (){}, style: ElevatedButton.styleFrom(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8)
-              ),
-            primary: Theme.of(context).primaryColor, ),
-              child: Container(
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(vertical: 20),
-                child: Text('Book Now',style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),),
-              ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            DetailAppBar(house),
+            SizedBox(height: 20),
+            ContentIntro(house: house),
+            SizedBox(height: 10),
+            HouseInfo(),
+            SizedBox(height: 20),
+            About(),
+            SizedBox(height: 20),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child:ElevatedButton(
+                  onPressed: (){}, style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8)
+                ),
+              primary: Theme.of(context).primaryColor, ),
+                child: Container(
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.symmetric(vertical: 20),
+                  child: Text('Book Now',style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),),
+                ),
 
-            ),
-          )
-        ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
